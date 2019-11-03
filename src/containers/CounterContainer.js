@@ -10,7 +10,7 @@ const mapStateToProps = state => ({
 // 액션 생성자를 사용하여 액션을 생성하고
 // 해당 액션을 dispatch 하는 함수를 만든 후 이를 props 로 연결해 준다.
 const mapDispatchToProps = dispatch => ({
-  onIncrement: () => dispatch(actions.increment()),
+  onIncrement: () => dispatch({ type: "INCREMENT" }),
   onDecrement: () => dispatch(actions.decrement()),
   onSetColor: () => {
     const color = "black"; //임시
