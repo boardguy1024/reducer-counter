@@ -1,6 +1,6 @@
 import React from "react";
 import Counter from "./Counter";
-
+import { List } from "immutable";
 import "./CounterList.css";
 
 const CounterList = ({ counters, onIncrement, onDecrement, onSetColor }) => {
@@ -8,7 +8,7 @@ const CounterList = ({ counters, onIncrement, onDecrement, onSetColor }) => {
     <Counter
       key={i}
       index={i}
-      {...counter}
+      {...counter.toJS()}
       onIncrement={onIncrement}
       onDecrement={onDecrement}
       onSetColor={onSetColor}

@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { getRandomColor } from "../utils";
 
 const mapStateToProps = state => ({
-  counters: state.counters
+  counters: state.get("counters")
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -12,7 +12,7 @@ const mapDispatchToProps = dispatch => ({
   onDecrement: index => dispatch(actions.decrement(index)),
   onSetColor: index => {
     const color = getRandomColor();
-    dispatch(actions.setColor(color));
+    dispatch(actions.setColor({ index, color }));
   }
 });
 
